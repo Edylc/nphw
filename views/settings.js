@@ -1,9 +1,9 @@
-var URL = "http://localhost:5000";
+var URL = "https://nphw.herokuapp.com";
 var allClasses = [];
 var ownClasses = [];
 
 var addClass = function() {
-  
+
 }
 
 var loadAllClasses = function() {
