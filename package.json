@@ -1,0 +1,34 @@
+{
+  "name": "userAuth",
+  "main": "index.js",
+  "version": "1.0.0",
+  "description": "NPHW server",
+  "engines": {
+    "node": "6.2.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "nphw"
+  ],
+  "author": "Leon",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^0.7.12",
+    "body-parser": "^1.9.0",
+    "cookie-parser": "^1.3.3",
+    "ejs": "^2.5.2",
+    "express": "^4.9.5",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.8.2",
+    "method-override": "^2.2.0",
+    "morgan": "^1.3.2",
+    "orchestrate": "^0.3.11",
+    "passport": "^0.2.1",
+    "passport-local": "1.0.0",
+    "path": "^0.12.7",
+    "q": "^1.0.1"
+  }
+}

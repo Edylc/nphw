@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>NPHS HW</title>
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <script src="students.js" type="text/javascript"></script>
+</head>
+<body>
+  <div class="header">Homework Search</div>
+  <a href="settings.html" class="settings">Add a class</a>
+  <div id="dateInput">
+    Date: <input type="date" id="datepicker" onchange="hwDisplay();">
+  </div>
+  <table id="results">
+    <thead>
+      <tr>
+        <th>Class</th>
+        <th>HW</th>
+      </tr>
+    </thead>
+    <tbody id="resultBody"></tbody>
+  </table>
+</body>
+</html>

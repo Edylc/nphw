@@ -1,0 +1,92 @@
+{{#if user}}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+  <link type="text/css" rel="stylesheet" href="main.css">
+  <script type="text/javascript">var user = JSON.parse('{{{json user}}}');</script>
+</head>
+<body onload="loadAllClasses();">
+  <div class="header">Settings</div>
+  <table class="selected">
+    <thead>
+      <tr>
+        <th>Teacher</th>
+        <th>Class</th>
+      </tr>
+    </thead>
+    <tbody id="currentClasses">
+      <tr colspan="2">
+        <td>N/A</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>Click to add:</h2>
+  <div class="classList">
+    <div class="dept" onclick="document.getElementById('cte').style.display='block';">
+      CTE
+    </div>
+    <div class="detailed">
+      <ul id="cte"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('eng').style.display='block';">
+      English
+    </div>
+    <div class="detailed">
+      <ul id="eng"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('health').style.display='block';">
+      Health
+    </div>
+    <div class="detailed">
+      <ul id="health"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('math').style.display='block';">
+      Mathematics
+    </div>
+    <div class="detailed">
+      <ul id="math"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('pe').style.display='block';">
+      PE
+    </div>
+    <div class="detailed">
+      <ul id="pe"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('sci').style.display='block';">
+      Science
+    </div>
+    <div class="detailed">
+      <ul id="sci"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('socsci').style.display='block';">
+      Social Science
+    </div>
+    <div class="detailed">
+      <ul id="socsci"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('specialed').style.display='block';">
+      Special Education
+    </div>
+    <div class="detailed">
+      <ul id="sped"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('vpa').style.display='block';">
+      Visual/Performing Arts
+    </div>
+    <div class="detailed">
+      <ul id="vpa"></ul>
+    </div>
+    <div class="dept" onclick="document.getElementById('wla').style.display='block';">
+      World Languages
+    </div>
+    <div class="detailed">
+      <ul id="wla"></ul>
+    </div>
+  </div>
+</body>
+  <script type="text/javascript" src="settings.js"></script>
+</html>
+
+{{/if}}

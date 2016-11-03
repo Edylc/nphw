@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Homework Input</title>
+  <link type="text/css" rel="stylesheet" href="main.css">
+  <script type="text/javascript" src="students.js"></script>
+</head>
+<body onload="teacherClassSet();">
+  <div class="header">Homework input</div>
+  <a href="settings.html" class="settings">Add a class</a>
+  <form>
+    <table id="hwPostTable">
+      <tbody>
+        <tr>
+          <td class="category">Date:</td>
+          <td>
+            <input type="date" id="date">
+          </td>
+        </tr>
+        <tr>
+          <td class="category">Subject:</td>
+          <td>
+            <select name="subject" id="subject">
+              <option selected="selected" disabled>Choose class</option>
+            </select>
+          </tr>
+        <tr>
+          <td colspan="2">
+            <textarea rows="10" cols="70" id="hwPost" placeholder="Post homework here..."></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input onclick="hwSubmit();" id="submit" type="button" value="Submit" onclick="confirm('Correct?');">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </form>
+</body>
+</html>

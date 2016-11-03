@@ -1,0 +1,115 @@
+body {
+  background-color: #ffd966;
+  margin: 0px;
+}
+
+h2 {
+  margin-left: 5px;
+  font-size: 40px;
+  font-family: sans-serif;
+}
+
+.settings {
+  float: right;
+  padding-right: 3px;
+}
+
+.header {
+  padding: 20px 0px;
+  width: 100%;
+  background-color: black;
+  color: white;
+  font-family: Century Gothic;
+  font-size: 50px;
+  text-align: center;
+}
+
+.remove {
+  margin-left: 6px;
+  float: right;
+}
+
+.category {
+  width: 10px;
+  font-weight: bold;
+}
+
+.selected {
+  text-align: left;
+  margin: 10px 20px;
+  font-size: 18px;
+}
+
+.selected td {
+  padding: 2px 12px 2px 0px;
+  vertical-align: text-bottom;
+}
+
+.classList {
+  font-family: Arial;
+}
+
+.dept {
+  font-weight: bold;
+  background-color: #ffcc33;
+  padding: 5px;
+  width: 50%;
+  margin-left: 10px;
+  margin-bottom: 7px;
+  cursor: pointer;
+}
+
+.detailed ul{
+  display: none;
+  cursor: pointer;
+  color: #0645AD;
+  text-decoration: underline;
+}
+
+textarea {
+  font-family: arial;
+}
+
+#submit {
+  float: right;
+  margin: 0px 2px;
+  padding: 7px 5px;
+  background-color: #cce6ff;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  font-family: Impact;
+}
+
+#results {
+  width: 80%;
+  margin: auto;
+  margin-top: 15px;
+  border-collapse: collapse;
+  padding: 10px; //???
+}
+
+#results th:first-child {
+  width: 20%;
+}
+
+#dateInput {
+  margin: 10px 50px;
+  font-family: Century Gothic;
+}
+
+#hwPostTable {
+  width: 150px;
+  padding: 100px 0px;
+  margin: auto;
+  font-family: Century Gothic;
+}
+
+#results th {
+  font-size: 20px;
+  border: 1px solid black;
+  padding: 0px 10px 0px 2px;
+}
+
+#results td {
+  border: 1px solid black;
+}
