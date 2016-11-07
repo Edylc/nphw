@@ -6,11 +6,11 @@ var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   console.log(i);
   var classes = [];
-  if (!ownClasses.includes(i)) {
+  if (!(ownClasses.includes(i))) {
     ownClasses.push(i);
-    if (ownClasses.length === 1) {
-      document.getElementById("currentClasses").innerHTML = "";
-    }
+    // if (ownClasses.length === 1) {
+    //   document.getElementById("currentClasses").innerHTML = "";
+    // }
     var temp = document.getElementById("currentClasses");
     temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
   }
