@@ -4,9 +4,13 @@ var ownClasses = [];
 
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
-  console.log(i);
   var classes = [];
-  if (!(ownClasses.includes(i))) {
+  var has = false;
+  for (let thing of ownClasses) {
+    if (thing.id === i.id)
+      has = true;
+  }
+  if (!has) {
     ownClasses.push(i);
     // if (ownClasses.length === 1) {
     //   document.getElementById("currentClasses").innerHTML = "";
