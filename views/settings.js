@@ -2,8 +2,23 @@ var URL = "http://nphw.herokuapp.com";
 var allClasses = [];
 var ownClasses = [];
 
-var addClass = function() {
-
+var addClass = function(curClass) {
+  var i = getClassById(curClass)[0];
+  var classes = [];
+  if (!ownClasses.includes(i)) {
+    ownClasses.push(i);
+    if (ownClasses.length === 1) {
+      document.getElementById("currentClasses").innerHTML = "";
+    }
+    var temp = document.getElementById("currentClasses");
+    temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
+  }
+  for (let item of ownClasses) {
+    classes.push(item.id);
+  }
+  httpPostAsync(URL + "/add-class", classes, function(response) {
+    displayOwnClasses();
+  });
 }
 
 var loadAllClasses = function() {
@@ -63,6 +78,18 @@ var studentClass = function(subject, subjectShort, teacher, className, id) {
   this.teacher = teacher;
   this.className = className;
   this.id = id;
+}
+
+function httpPostAsync(theUrl, data, callback) {
+  var http = new XMLHttpRequest();
+  http.open("POST", url, true);
+  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  http.onreadystatechange = function() {
+    if(http.readyState == 4 && http.status == 200) {
+        alert(http.responseText);
+    }
+  }
+  http.send(data);
 }
 
 function httpGetAsync(theUrl, callback)
