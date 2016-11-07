@@ -4,6 +4,7 @@ var ownClasses = [];
 
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
+  console.log(i);
   var classes = [];
   if (!ownClasses.includes(i)) {
     ownClasses.push(i);
