@@ -17,9 +17,9 @@ var addClass = function(curClass) {
   for (let item of ownClasses) {
     classes.push(item.id);
   }
-  httpPostAsync(URL + "/add-class", classes, function(response) {
-    displayOwnClasses();
-  });
+  // httpPostAsync(URL + "/add-class", classes, function(response) {
+  //   displayOwnClasses();
+  // });
 }
 
 var loadAllClasses = function() {
@@ -51,7 +51,7 @@ var loadOwnClasses = function() {
 var displayAllClasses = function() {
   for (let i of allClasses) {
     var temp = document.getElementById(i.subjectShort);
-    temp.innerHTML += "<li id='" + i.id + "' onclick='addClass('" + i.id + "');'>" + i.className + " - " + i.teacher + "</li>";
+    temp.innerHTML += "<li id='" + i.id + "' onclick=\'addClass('" + i.id + "');'>" + i.className + " - " + i.teacher + "</li>";
   }
 }
 
