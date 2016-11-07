@@ -7,7 +7,7 @@ var addClass = function(curClass) {
   var classes = [];
   var has = false;
   for (let thing of ownClasses) {
-    if (thing.id === i.id)
+    if (thing.id.equals(i.id))
       has = true;
   }
   if (!has) {
