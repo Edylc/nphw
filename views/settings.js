@@ -1,4 +1,4 @@
-var URL = "https://nphw.herokuapp.com";
+var URL = "http://nphw.herokuapp.com";
 var allClasses = [];
 var ownClasses = [];
 
