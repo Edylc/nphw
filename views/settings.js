@@ -36,6 +36,7 @@ var loadAllClasses = function() {
       var classSub = temp.value.subject;
       var classSSub = temp.value.subjectShort;
       allClasses.push(new studentClass(classSub, classSSub, classTeach, className, classID));
+      console.log(typeof temp.path.key)
     }
     displayAllClasses();
     loadOwnClasses();
