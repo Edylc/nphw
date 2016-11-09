@@ -12,9 +12,9 @@ var addClass = function(curClass) {
     temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
   }
 
-  // httpPostAsync(URL + "/add-class", ownClasses, function(response) {
-  //   displayOwnClasses();
-  // });
+  httpPostAsync(URL + "/add-class", ownClasses, function(response) {
+   displayOwnClasses();
+  });
 }
 
 var loadAllClasses = function() {
