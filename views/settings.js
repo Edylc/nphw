@@ -4,6 +4,7 @@ var ownClasses = []; //reference ID #s
 //includes vs equals vs ===, string vs int
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
+  classes = [];
   console.log(i);
   if (!ownClasses.includes(curClass)) {
     ownClasses.push(i);
@@ -13,10 +14,8 @@ var addClass = function(curClass) {
     var temp = document.getElementById("currentClasses");
     temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
   }
-  for (let item of ownClasses) {
-    classes.push(item.id);
-  }
-  // httpPostAsync(URL + "/add-class", classes, function(response) {
+
+  // httpPostAsync(URL + "/add-class", ownClasses, function(response) {
   //   displayOwnClasses();
   // });
 }
