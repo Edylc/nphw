@@ -1,16 +1,12 @@
 var URL = "http://nphw.herokuapp.com";
 var allClasses = [];
 var ownClasses = [];
-
+//includes vs equals vs ===, string vs int
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   var classes = [];
   var has = false;
-  for (let thing of ownClasses) {
-    if (thing.id.equals(i.id))
-      has = true;
-  }
-  if (!has) {
+  if (!ownClasses.includes(i)) {
     ownClasses.push(i);
     // if (ownClasses.length === 1) {
     //   document.getElementById("currentClasses").innerHTML = "";
@@ -74,7 +70,7 @@ var displayOwnClasses = function() {
 
 var getClassById = function(index) {
   return allClasses.filter(function(obj) {
-    return obj.id === index;
+    return obj.id.equals(index);
   });
 }
 
