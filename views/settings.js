@@ -9,7 +9,7 @@ var addClass = function(curClass) {
   var exists = ownClasses.filter(function(obj) {
     return obj.id === curClass;
   });
-  if (!exists) {
+  if (exists) {
     ownClasses.push(i);
     // if (ownClasses.length === 1) {
     //   document.getElementById("currentClasses").innerHTML = "";
