@@ -173,7 +173,8 @@ app.get('/own-classes', function(req, res) {
 });
 
 app.post('/add-class', function(req, res) {
-  funct.addClass(req.user.username, req.classes).then(function(result) {
+  console.log(req);
+  funct.addClass(req.user.username, req.data).then(function(result) {
     res.json(result);
   }, function(err) {
     console.log(err);
