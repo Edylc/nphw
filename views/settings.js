@@ -7,7 +7,13 @@ var addClass = function(curClass) {
   console.log(i);
   var classes = [];
   var has = false;
-  if (!ownClasses.includes(i)) {
+  for (let thing of ownClasses) {
+    if(thing.id === curClass) {
+      console.log('yay');
+      has = true;
+    }
+  }
+  if (!has) {
     ownClasses.push(i);
     // if (ownClasses.length === 1) {
     //   document.getElementById("currentClasses").innerHTML = "";
