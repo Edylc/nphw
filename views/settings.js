@@ -70,7 +70,7 @@ var displayOwnClasses = function() {
 
 var getClassById = function(index) {
   return allClasses.filter(function(obj) {
-    return obj.id.equals(index);
+    console.log(return obj.id === (index));
   });
 }
 
