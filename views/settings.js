@@ -5,7 +5,7 @@ var ownClasses = []; //reference ID #s
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   console.log(i);
-  if (!ownClasses.includes(curClasss)) {
+  if (!ownClasses.includes(curClass)) {
     ownClasses.push(i);
     // if (ownClasses.length === 1) {
     //   document.getElementById("currentClasses").innerHTML = "";
