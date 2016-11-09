@@ -8,7 +8,7 @@ var addClass = function(curClass) {
   var classes = [];
   var has = false;
   for (let thing of ownClasses) {
-    if(thing.id.equals(curClass)) {
+    if(thing["id"].equals(curClass)) {
       console.log('yay');
       has = true;
     }
