@@ -1,16 +1,11 @@
 var URL = "http://nphw.herokuapp.com";
-var allClasses = [];
-var ownClasses = [];
+var allClasses = []; //StudentClass objects
+var ownClasses = []; //reference ID #s
 //includes vs equals vs ===, string vs int
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   console.log(i);
-  var classes = [];
-  var exists = ownClasses.filter(function(obj) {
-    return obj.id === curClass;
-  });
-  console.log(exists);
-  if (!exists) {
+  if (!ownClasses.includes(curClasss)) {
     ownClasses.push(i);
     // if (ownClasses.length === 1) {
     //   document.getElementById("currentClasses").innerHTML = "";
