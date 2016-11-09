@@ -6,15 +6,10 @@ var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   console.log(i);
   var classes = [];
-  var has = false;
-  for (let thing of ownClasses) {
-    console.log(thing);
-    if(thing["id"].equals(curClass)) {
-      console.log('yay');
-      has = true;
-    }
-  }
-  if (!has) {
+  var exists = ownClasses.filter(function(obj) {
+    return obj.id === curClass;
+  });
+  if (!exists) {
     ownClasses.push(i);
     // if (ownClasses.length === 1) {
     //   document.getElementById("currentClasses").innerHTML = "";
