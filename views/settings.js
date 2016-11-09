@@ -77,15 +77,15 @@ var studentClass = function(subject, subjectShort, teacher, className, id) {
 }
 
 function httpPostAsync(theUrl, data, callback) {
-  var http = new XMLHttpRequest();
-  http.open("POST", url, true);
-  http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  http.onreadystatechange = function() {
-    if(http.readyState == 4 && http.status == 200) {
-        alert(http.responseText);
+  var xmlHttp = new XMLHttpRequest();
+  xmlHttp.open("POST", theUrl, true);
+  xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlHttp.onreadystatechange = function() {
+    if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+        alert(xmlHttp.responseText);
     }
   }
-  http.send(data);
+  xmlHttp.send(data);
 }
 
 function httpGetAsync(theUrl, callback)
