@@ -4,6 +4,7 @@ var ownClasses = [];
 //includes vs equals vs ===, string vs int
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
+  console.log(i);
   var classes = [];
   var has = false;
   if (!ownClasses.includes(i)) {
@@ -32,7 +33,6 @@ var loadAllClasses = function() {
       var classSub = temp.value.subject;
       var classSSub = temp.value.subjectShort;
       allClasses.push(new studentClass(classSub, classSSub, classTeach, className, classID));
-      console.log(typeof temp.path.key)
     }
     displayAllClasses();
     loadOwnClasses();
@@ -70,7 +70,7 @@ var displayOwnClasses = function() {
 
 var getClassById = function(index) {
   return allClasses.filter(function(obj) {
-    console.log(return obj.id === (index));
+    return obj.id === index;
   });
 }
 
