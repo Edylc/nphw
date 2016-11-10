@@ -6,14 +6,22 @@ var ownClasses = []; //reference ID #s
 //password issues in config.js
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
-  classes = [];
   console.log(i);
   if (!ownClasses.includes(curClass)) {
     ownClasses.push(curClass);
-    var temp = document.getElementById("currentClasses");
-    temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
-    httpPostAsync(URL + "/add-class", ownClasses, function(response) {
-     displayOwnClasses();
+    //var temp = document.getElementById("currentClasses");
+    //temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
+    var classJSON = "{ 'classes' : [" + ownClasses[1];
+    for (let temp of ownClasses) {
+      classJSON += ", " + temp;
+    }
+    classJSON += "]}";
+    httpPostAsync(URL + "/add-class", JSON.parse(classJSON), function(response) {
+      var classes = JSON.parse(response).classes;
+      for (let temp of classes) {
+        ownClasses.push(temp);
+      }
+      displayOwnClasses();
     });
   }
 }

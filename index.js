@@ -173,12 +173,14 @@ app.get('/own-classes', function(req, res) {
 });
 
 app.post('/add-class', function(req, res) {
-  funct.addClass(req.user.username, req.user.password, req.data).then(function(result) {
+  console.log(req);
+  funct.addClass(req.user.username, req.user.password, req.body.classes).then(function(result) {
     res.json(result);
   }, function(err) {
     console.log(err);
   });
 });
+
 //sends the request through our local signup strategy, and if successful takes user to homepage, otherwise returns then to signin page
 app.post('/local-reg', passport.authenticate('local-signup', {
   successRedirect: '/',
