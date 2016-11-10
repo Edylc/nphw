@@ -2,13 +2,12 @@ var URL = "http://nphw.herokuapp.com";
 var allClasses = []; //StudentClass objects
 var ownClasses = []; //reference ID #s
 
-//includes vs equals vs ===, string vs int
 //password issues in config.js
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
-  console.log(i);
   if (!ownClasses.includes(curClass)) {
     ownClasses.push(curClass);
+    console.log(ownClasses);
     //var temp = document.getElementById("currentClasses");
     //temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
     var classJSON = {
@@ -44,6 +43,7 @@ var loadAllClasses = function() {
 var loadOwnClasses = function() {
   httpGetAsync(URL + "/own-classes", function(response) {
     var classes = JSON.parse(response).classes;
+    if (!classes) return;
     for (let temp of classes) {
       ownClasses.push(temp);
     }
