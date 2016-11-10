@@ -3,6 +3,27 @@ var allClasses = []; //StudentClass objects
 var ownClasses = []; //reference ID #s
 
 //password issues in config.js
+var removeClass = function(curClass) {
+  var index = ownClasses.indexOf(curClass);
+  if (index >= 0) {
+    ownClasses.splyce(index, 1);
+  }
+  else return;
+  var classJSON = {
+    "classes" : ownClasses
+  };
+  classJSON = JSON.stringify(classJSON);
+  httpPostAsync(URL + "/rem-class", classJSON, function(response) {
+    ownClasses = [];
+    var classes = JSON.parse(response).classes;
+    for (let temp of classes) {
+      ownClasses.push(temp);
+    }
+    displayOwnClasses();
+  });
+}
+}
+
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   if (!ownClasses.includes(curClass)) {
@@ -63,7 +84,7 @@ var displayOwnClasses = function() {
       var temp = document.getElementById("currentClasses");
       var j = getClassById(classIndex);
       var i = j[0];
-      temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
+      temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(\"" + i.id + "\");'></td></tr>";
     }
   }
 }

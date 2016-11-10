@@ -136,7 +136,7 @@ app.get('/teachers', ensureAuthenticated, function(req, res) {
   res.render('teachers', {user: req.user});
 });
 
-app.get('/students', function(req, res) {
+app.get('/students', ensureAuthenticated, function(req, res) {
   res.render('students', {user: req.user});
 });
 
@@ -144,15 +144,15 @@ app.get('/main.css', function(req, res) {
   res.sendFile('/main.css');
 });
 
-app.get('/students.js', function(req, res) {
+app.get('/students.js', ensureAuthenticated, function(req, res) {
   res.sendFile('/students.js');
 });
 
-app.get('/settings.js', function(req, res) {
+app.get('/settings.js', ensureAuthenticated, function(req, res) {
   res.sendFile('/settings.js');
 });
 
-app.get('/teachers.js', function(req, res) {
+app.get('/teachers.js', ensureAuthenticated, function(req, res) {
   res.sendFile('/teachers.js');
 });
 
@@ -164,7 +164,7 @@ app.get('/all-classes', function(req, res) {
   });
 });
 
-app.get('/own-classes', function(req, res) {
+app.get('/own-classes', ensureAuthenticated, function(req, res) {
   funct.getOwnClasses(req.user.username).then(function(result) {
     res.json(result);
   }, function(err) {
@@ -172,8 +172,15 @@ app.get('/own-classes', function(req, res) {
   });
 });
 
-app.post('/add-class', function(req, res) {
-  console.log(req);
+app.post('/add-class', ensureAuthenticated, function(req, res) {
+  funct.addClass(req.user.username, req.user.password, req.body.classes).then(function(result) {
+    res.json(result);
+  }, function(err) {
+    console.log(err);
+  });
+});
+
+app.post('/rem-class', ensureAuthenticated, function(req, res) {
   funct.addClass(req.user.username, req.user.password, req.body.classes).then(function(result) {
     res.json(result);
   }, function(err) {
