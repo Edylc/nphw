@@ -13,7 +13,6 @@ var addClass = function(curClass) {
       "classes" : ownClasses
     };
     classJSON = JSON.stringify(classJSON);
-    console.log(classJSON);
     httpPostAsync(URL + "/add-class", classJSON, function(response) {
       var classes = JSON.parse(response).classes;
       console.log(response);
@@ -91,7 +90,7 @@ function httpPostAsync(theUrl, data, callback) {
   xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xmlHttp.onreadystatechange = function() {
     if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-        alert(xmlHttp.responseText);
+        callback(xmlHttp.responseText);
     }
   }
   xmlHttp.send(data);
