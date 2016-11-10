@@ -11,12 +11,11 @@ var addClass = function(curClass) {
     ownClasses.push(curClass);
     //var temp = document.getElementById("currentClasses");
     //temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
-    var classJSON = "{ 'classes' : [" + ownClasses[1];
-    for (let temp of ownClasses) {
-      classJSON += ", " + temp;
-    }
-    classJSON += "]}";
-    httpPostAsync(URL + "/add-class", JSON.parse(classJSON), function(response) {
+    var classJSON = {
+      "classes" : JSON.stringify(ownClasses);
+    };
+    console.log(classJSON);
+    httpPostAsync(URL + "/add-class", classJSON, function(response) {
       var classes = JSON.parse(response).classes;
       for (let temp of classes) {
         ownClasses.push(temp);
