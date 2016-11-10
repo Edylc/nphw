@@ -80,6 +80,11 @@ textarea {
   font-family: Impact;
 }
 
+#profilepic {
+  height: 100px;
+  width: 100px;
+}
+
 #results {
   width: 80%;
   margin: auto;
