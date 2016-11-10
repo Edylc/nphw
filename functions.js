@@ -98,10 +98,9 @@ exports.getOwnClasses = function(username) {
 
 exports.addClass = function(username, password, classes) {
   var deferred = Q.defer();
-  var hash = bcrypt.hashSync(password, 8);
   var user = {
     "username": username,
-    "password": hash,
+    "password": password,
     "avatar": "http://placepuppy.it/images/homepage/Beagle_puppy_6_weeks.JPG",
     "classList": classes
   }
