@@ -16,7 +16,7 @@ var addClass = function(curClass) {
     console.log(classJSON);
     httpPostAsync(URL + "/add-class", classJSON, function(response) {
       var classes = JSON.parse(response).classes;
-      console.log(classes);
+      console.log(response);
       for (let temp of classes) {
         ownClasses.push(temp);
       }
