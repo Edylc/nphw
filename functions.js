@@ -102,7 +102,7 @@ exports.addClass = function(username, password, classes) {
     "username": username,
     "password": password,
     "avatar": "http://placepuppy.it/images/homepage/Beagle_puppy_6_weeks.JPG",
-    "classList": classes
+    "classes": classes
   }
   db.get('local-users', username)
   .then(function (result) {
