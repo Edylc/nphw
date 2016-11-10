@@ -7,15 +7,13 @@ var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   if (!ownClasses.includes(curClass)) {
     ownClasses.push(curClass);
-    //var temp = document.getElementById("currentClasses");
-    //temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
     var classJSON = {
       "classes" : ownClasses
     };
     classJSON = JSON.stringify(classJSON);
     httpPostAsync(URL + "/add-class", classJSON, function(response) {
+      ownClasses = [];
       var classes = JSON.parse(response).classes;
-      console.log(response);
       for (let temp of classes) {
         ownClasses.push(temp);
       }
