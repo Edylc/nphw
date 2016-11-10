@@ -10,7 +10,7 @@ exports.localReg = function (username, password) {
   var user = {
     "username": username,
     "password": hash,
-    "avatar": "https://s-media-cache-ak0.pinimg.com/564x/3b/80/23/3b80233da0fccbc898f8b61a632b61ea.jpg",
+    "avatar": "http://images.clipartpanda.com/stature-clipart-clip-art-illustration-of-cute-tiny-gray-mouse-royalty-free.jpg",
     "classes": []
   }
   //check if username is already assigned in our database
@@ -102,7 +102,7 @@ exports.addClass = function(username, password, classes) {
   var user = {
     "username": username,
     "password": password,
-    "avatar": "https://s-media-cache-ak0.pinimg.com/564x/3b/80/23/3b80233da0fccbc898f8b61a632b61ea.jpg",
+    "avatar": "http://images.clipartpanda.com/stature-clipart-clip-art-illustration-of-cute-tiny-gray-mouse-royalty-free.jpg",
     "classes": classes
   }
   db.get('local-users', username)

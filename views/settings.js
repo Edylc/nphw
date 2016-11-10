@@ -9,7 +9,7 @@ var removeClass = function(curClass) {
     ownClasses.splice(index, 1);
   }
   console.log(ownClasses);
-  else return;
+  else {return;}
   var classJSON = {
     "classes" : ownClasses
   };
@@ -79,14 +79,12 @@ var displayAllClasses = function() {
 }
 
 var displayOwnClasses = function() {
-  if (ownClasses.length !== 0) {
-    document.getElementById("currentClasses").innerHTML = "";
-    for (let classIndex of ownClasses) {
-      var temp = document.getElementById("currentClasses");
-      var j = getClassById(classIndex);
-      var i = j[0];
-      temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(\"" + i.id + "\");'></td></tr>";
-    }
+  document.getElementById("currentClasses").innerHTML = "";
+  for (let classIndex of ownClasses) {
+    var temp = document.getElementById("currentClasses");
+    var j = getClassById(classIndex);
+    var i = j[0];
+    temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(\"" + i.id + "\");'></td></tr>";
   }
 }
 
