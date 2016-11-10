@@ -86,7 +86,7 @@ var studentClass = function(subject, subjectShort, teacher, className, id) {
 function httpPostAsync(theUrl, data, callback) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("POST", theUrl, true);
-  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+  xmlHttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xmlHttp.onreadystatechange = function() {
     if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
         alert(xmlHttp.responseText);
