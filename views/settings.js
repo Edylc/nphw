@@ -8,7 +8,6 @@ var removeClass = function(curClass) {
   if (index >= 0) {
     ownClasses.splice(index, 1);
   }
-  console.log(ownClasses);
   else {return;}
   var classJSON = {
     "classes" : ownClasses
