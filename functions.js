@@ -10,7 +10,8 @@ exports.localReg = function (username, password) {
   var user = {
     "username": username,
     "password": hash,
-    "avatar": "http://placepuppy.it/images/homepage/Beagle_puppy_6_weeks.JPG"
+    "avatar": "http://placepuppy.it/images/homepage/Beagle_puppy_6_weeks.JPG",
+    "classes": []
   }
   //check if username is already assigned in our database
   db.get('local-users', username)
@@ -101,7 +102,7 @@ exports.addClass = function(username, password, classes) {
   var user = {
     "username": username,
     "password": password,
-    "avatar": "http://placepuppy.it/images/homepage/Beagle_puppy_6_weeks.JPG",
+    "avatar": "https://s-media-cache-ak0.pinimg.com/564x/3b/80/23/3b80233da0fccbc898f8b61a632b61ea.jpg",
     "classes": classes
   }
   db.get('local-users', username)
