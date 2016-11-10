@@ -6,7 +6,7 @@ var ownClasses = []; //reference ID #s
 var removeClass = function(curClass) {
   var index = ownClasses.indexOf(curClass);
   if (index >= 0) {
-    ownClasses.splyce(index, 1);
+    ownClasses.splice(index, 1);
   }
   else return;
   var classJSON = {
