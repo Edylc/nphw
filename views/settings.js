@@ -7,7 +7,6 @@ var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   if (!ownClasses.includes(curClass)) {
     ownClasses.push(curClass);
-    console.log(ownClasses);
     //var temp = document.getElementById("currentClasses");
     //temp.innerHTML += "<tr id='remove" + i.id + "'><td>" + i.teacher + "</td><td>" + i.className + "<input type='button' value='remove' class = 'remove' onclick='removeClass(" + i.id + ");'></td></tr>";
     var classJSON = {
@@ -87,7 +86,7 @@ var studentClass = function(subject, subjectShort, teacher, className, id) {
 function httpPostAsync(theUrl, data, callback) {
   var xmlHttp = new XMLHttpRequest();
   xmlHttp.open("POST", theUrl, true);
-  xmlHttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
   xmlHttp.onreadystatechange = function() {
     if(xmlHttp.readyState == 4 && xmlHttp.status == 200) {
         alert(xmlHttp.responseText);
