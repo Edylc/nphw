@@ -22,7 +22,7 @@ var removeClass = function(curClass) {
     displayOwnClasses();
   });
 }
-}
+
 
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
