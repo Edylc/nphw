@@ -1,7 +1,9 @@
 var URL = "http://nphw.herokuapp.com";
 var allClasses = []; //StudentClass objects
 var ownClasses = []; //reference ID #s
+
 //includes vs equals vs ===, string vs int
+//password issues in config.js
 var addClass = function(curClass) {
   var i = getClassById(curClass)[0];
   classes = [];

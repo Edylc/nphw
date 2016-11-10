@@ -132,7 +132,7 @@ app.get('/settings', ensureAuthenticated, function(req, res) {
   res.render('settings', {user: req.user});
 });
 
-app.get('/teachers', function(req, res) {
+app.get('/teachers', ensureAuthenticated, function(req, res) {
   res.render('teachers', {user: req.user});
 });
 
@@ -173,8 +173,7 @@ app.get('/own-classes', function(req, res) {
 });
 
 app.post('/add-class', function(req, res) {
-  console.log("req");
-  funct.addClass(req.user.username, req.data).then(function(result) {
+  funct.addClass(req.user.username, req.user.password, req.data).then(function(result) {
     res.json(result);
   }, function(err) {
     console.log(err);

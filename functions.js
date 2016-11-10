@@ -96,7 +96,7 @@ exports.getOwnClasses = function(username) {
   return deferred.promise;
 };
 
-exports.addClass = function(username, classes) {
+exports.addClass = function(username, password, classes) {
   var deferred = Q.defer();
   var hash = bcrypt.hashSync(password, 8);
   var user = {
